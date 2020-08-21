@@ -10,7 +10,7 @@ const auth = async (req, res, next) => {
         const user = await User.findOne({ _id: decode._id, "tokens.token": token });
 
         if (!user) {
-            throw new Error('')
+            throw new Error('Khong dung voi token')
         }
 
         req.token = token
